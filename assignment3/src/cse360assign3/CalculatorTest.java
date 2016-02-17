@@ -18,37 +18,37 @@ public class CalculatorTest
 	@Test
 	public void getTotal() 
 	{
-		fail("Not implimented");
+		fail("Not implemented");
 	}
 
 	@Test
 	public void add() 
 	{
-		fail("Not implimented");
+		fail("Not implemented");
 	}
 	
 	@Test
 	public void subtract() 
 	{
-		fail("Not implimented");
+		fail("Not implemented");
 	}
 	
 	@Test
 	public void multiply() 
 	{
-		fail("Not implimented");
+		fail("Not implemented");
 	}
 	
 	@Test
 	public void divide() 
 	{
-		fail("Not implimented");
+		fail("Not implemented");
 	}
 	
 	@Test
 	public void getHistory() 
 	{
-		fail("Not implimented");
+		fail("Not implemented");
 	}
 	
 }
