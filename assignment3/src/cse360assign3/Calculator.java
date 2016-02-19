@@ -11,6 +11,7 @@ public class Calculator
 {
 
 	private int total;
+	private String history;
 	
 	/**
 	 *  Creates a calculator with an initial total of zero.
@@ -18,6 +19,7 @@ public class Calculator
 	public Calculator () 
 	{
 		total = 0;  // not needed - included for clarity
+		history = "0";
 	}
 	
 	/**
@@ -38,6 +40,7 @@ public class Calculator
 	public void add (int value) 
 	{
 		total += value;
+		history += " + " + value;
 	}
 	
 	/**
@@ -48,6 +51,7 @@ public class Calculator
 	public void subtract (int value) 
 	{
 		total -= value;
+		history += " - " + value;
 	}
 	
 	/**
@@ -58,6 +62,7 @@ public class Calculator
 	public void multiply (int value) 
 	{
 		total *= value;
+		history += " * " + value;
 	}
 	
 	/**
@@ -71,16 +76,18 @@ public class Calculator
 			total = 0;
 		else
 			total /= value;
+		
+		history += " / " + value;
 	}
 	
 	/**
-	 * getHistory - returns a string (currently an empty string)
+	 * getHistory - returns a string of mathematical operations made on total
 	 * 
-	 * @return ""
+	 * @return history - operation history 
 	 */
 	public String getHistory () 
 	{
-		return "";
+		return history;
 	}
 	
 }

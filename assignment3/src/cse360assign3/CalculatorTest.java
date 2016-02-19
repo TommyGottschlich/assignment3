@@ -18,7 +18,7 @@ public class CalculatorTest
 	
 	@Test
 	//test total 
-	public void getTotal() 
+	public void testGetTotal() 
 	{
 		Calculator calc =  new Calculator(); 
 				
@@ -27,7 +27,7 @@ public class CalculatorTest
 
 	@Test
 	//test adding to total
-	public void add() 
+	public void testAdd() 
 	{
 		Calculator calc =  new Calculator(); 
 		
@@ -37,8 +37,19 @@ public class CalculatorTest
 	}
 	
 	@Test
+	//test adding a negative to total
+	public void testAddNegative() 
+	{
+		Calculator calc =  new Calculator(); 
+		
+		calc.add(-9);
+		
+		assertEquals(-9, calc.getTotal());
+	}
+	
+	@Test
 	//test subtracting from total
-	public void subtract() 
+	public void testSubtract() 
 	{
 		Calculator calc =  new Calculator(); 
 		
@@ -48,8 +59,19 @@ public class CalculatorTest
 	}
 	
 	@Test
+	//test subtracting a negative from total
+	public void testSubtractNegative() 
+	{
+		Calculator calc =  new Calculator(); 
+		
+		calc.subtract(-1);
+		
+		assertEquals(1, calc.getTotal());
+	}
+	
+	@Test
 	//test multiplying to total
-	public void multiply() 
+	public void testMultiply() 
 	{
 		Calculator calc =  new Calculator(); 
 		
@@ -60,20 +82,56 @@ public class CalculatorTest
 	}
 	
 	@Test
+	//test multiplying a negative to total
+	public void testMultiplyNegative() 
+	{
+		Calculator calc =  new Calculator(); 
+		
+		calc.add(3);
+		calc.multiply(-3);
+		
+		assertEquals(-9, calc.getTotal());
+	}
+	
+	@Test
 	//test dividing form total
-	public void divide() 
+	public void testDivide() 
+	{
+		Calculator calc =  new Calculator(); 
+		
+		calc.add(3);
+		calc.divide(2);
+		
+		assertEquals(1, calc.getTotal());
+	}
+	
+	@Test
+	//test dividing a negative form total
+	public void testDivideNegative() 
+	{
+		Calculator calc =  new Calculator(); 
+		
+		calc.add(7);
+		calc.divide(-3);
+		
+		assertEquals(-2, calc.getTotal());
+	}
+	
+	@Test
+	//test dividing a negative zero form total
+	public void testDivideNegativeZero() 
 	{
 		Calculator calc =  new Calculator(); 
 		
 		calc.subtract(3);
-		calc.divide(2);
+		calc.divide(-0);
 		
-		assertEquals(-1, calc.getTotal());
+		assertEquals(0, calc.getTotal());
 	}
 	
 	@Test
 	//test dividing by zero
-	public void divideByZero() 
+	public void testDivideByZero() 
 	{
 		Calculator calc =  new Calculator(); 
 		
@@ -84,8 +142,52 @@ public class CalculatorTest
 	}
 	
 	@Test
-	//test history of function calls
-	public void getHistory() 
+	//test history of add call
+	public void testGetHistoryAdd() 
+	{
+		Calculator calc =  new Calculator(); 
+		
+		calc.add(7);
+		
+		assertEquals("0 + 7", calc.getHistory());
+	}
+	
+	@Test
+	//test history of subtract call
+	public void testGetHistorySubtract() 
+	{
+		Calculator calc =  new Calculator(); 
+		
+		calc.subtract(2);
+		
+		assertEquals("0 - 2", calc.getHistory());
+	}
+	
+	@Test
+	//test history of multiply call
+	public void testGetHistoryMultiply() 
+	{
+		Calculator calc =  new Calculator(); 
+		
+		calc.multiply(5);
+		
+		assertEquals("0 * 5", calc.getHistory());
+	}
+	
+	@Test
+	//test history of divide call
+	public void testGetHistoryDivide() 
+	{
+		Calculator calc =  new Calculator(); 
+		
+		calc.divide(0);
+		
+		assertEquals("0 / 0", calc.getHistory());
+	}
+	
+	@Test
+	//test history all function calls
+	public void testGetHistoryAll() 
 	{
 		Calculator calc =  new Calculator(); 
 		
