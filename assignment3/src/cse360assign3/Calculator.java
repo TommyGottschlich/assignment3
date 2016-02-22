@@ -1,6 +1,7 @@
 package cse360assign3;
 /**
- * Class to calculate various mathematical operations
+ * Class to calculate various mathematical operations as well as track history of
+ * operations made.
  * 
  * @author Thomas Gottschlich for CSE360 
  * @version Feb 16 2016 
@@ -25,7 +26,7 @@ public class Calculator
 	/**
 	 * getTotal - gets total from calculator
 	 * 
-	 * @return 0
+	 * @return total
 	 */
 	public int getTotal () 
 	{
